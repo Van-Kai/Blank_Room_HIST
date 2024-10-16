@@ -1,0 +1,22 @@
+[project]
+name = "Blank_Room"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "晋川", email = "2027514529@qq.com"},
+]
+dependencies = [
+    "requests>=2.32.3",
+    "BeautifulSoup>=3.2.2",
+    "beautifulsoup4>=4.12.3",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.31.0",
+    "jinja2>=3.1.4",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false

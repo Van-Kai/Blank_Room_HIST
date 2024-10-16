@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教室课程表</title>
+<style>
+    @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+    header {
+        padding: 5px 10px;
+    }
+    .logo {
+        width: 50px; /* 减小logo大小 */
+    }
+    table {
+        font-size: 10px; /* 减小字体大小 */
+    }
+    th, td {
+        padding: 5px; /* 减小单元格内边距 */
+    }
+    footer {
+        font-size: 0.7em; /* 减小页脚字体大小 */
+    }
+}
+
+
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        align-items: center;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+
+    }
+    header {
+        background-color: cornflowerblue;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 20px;
+    }
+    .logo {
+        width: 100px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        border-radius: 50px;
+
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .occupied {
+        background-color: #ff6b6b;
+        color: white;
+    }
+    .available {
+        background-color: #90ee90;
+        color: black;
+    }
+    footer {
+        background-color: #fff;
+        color: #999;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        font-size: 0.8em;
+        position: relative;
+
+    }
+    #screenshot {
+      width: 860px;
+      height: auto;
+    }
+
+</style>
+</head>
+<body>
+<div id="screenshot">
+    <div class="container">
+    <header>
+        <img src="/data/logo.png" alt="河南科技学院" class="logo">
+        <h1>河南科技学院</h1>
+        <p>2024-2025学年第一学期</p>
+        <p>{{campus}}&nbsp;&nbsp;{{building}}&nbsp;&nbsp;&nbsp;&nbsp;{{week_and_day}}</p>
+    </header>
+    <table>
+        <tr>
+            <th>教室</th>
+            {% for i in range(10 ) %}
+            <th>第{{ i + 1 }}节</th>
+            {% endfor %}
+        </tr>
+        {% for classroom in classrooms %}
+        <tr>
+            <td>{{ classroom }}</td>
+            {% set has_class = class_schedule.get(classroom, [False]*10) %}
+            {% for has_class_item in has_class %}
+            <td class="{{ 'occupied' if has_class_item else 'available' }}">{{ '有课' if has_class_item else '无课' }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+        <footer>
+    <p>&copy; 2024 作者：你的凯凯 QQ:202751529 &nbsp;&nbsp;数据来源于:&nbsp;&nbsp;河南科技学院教务系统</p>
+</footer>
+
+</div>
+
+
+</div>
+
+
+
+</body>
+</html>
