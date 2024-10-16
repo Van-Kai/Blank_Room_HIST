@@ -4,7 +4,7 @@
 
 ## 1.提供了精美UI
 
-![search_input_screenshot](E:\pythonProject\Blank_Room\search_input_screenshot.png)
+![search_input_screenshot]([E:\pythonProject\Blank_Room\search_input_screenshot.png](https://github.com/Van-Kai/Blank_Room_HIST/blob/master/search_input_screenshot.png?raw=true))
 
 ## 2. 调用示例
 
